@@ -35,7 +35,7 @@ import warnings
 warnings.filterwarnings("ignore", category=UserWarning, module='google.protobuf')
 
 # Enable custom widget manager for Plotly in Colab
-output.enable_custom_widget_manager()
+#output.enable_custom_widget_manager()
 
 # Initialize MediaPipe Face Mesh
 mp_face_mesh = mp.solutions.face_mesh
