@@ -29,6 +29,7 @@ import pandas as pd
 from datetime import datetime
 import atexit
 import plotly.graph_objs as go
+import plotly.graph_objects as go
 import os
 
 # Use environment variable for PORT provided by Render
@@ -293,7 +294,7 @@ face_image = widgets.Image(format='jpeg', width=640, height=480)        # Face w
 yellow_dot_image = widgets.Image(format='jpeg', width=224, height=224)  # Yellow dot movement
 
 # Create Plotly real-time graphs with predefined traces
-saccade_speed_fig = go.FigureWidget(
+saccade_speed_fig = go.Figure(
     data=[go.Scatter(x=[], y=[], mode='lines+markers', line=dict(color='blue'), name='Saccade Speed')],
     layout=go.Layout(
         title="Saccade Speed Over Time",
@@ -302,8 +303,8 @@ saccade_speed_fig = go.FigureWidget(
         height=300
     )
 )
-
-blink_count_fig = go.FigureWidget(
+st.plotly_chart(saccade_speed_fig )
+blink_count_fig = go.Figure(
     data=[go.Scatter(x=[], y=[], mode='lines+markers', line=dict(color='orange'), name='Blink Count')],
     layout=go.Layout(
         title="Blink Count Over Time",
@@ -312,8 +313,8 @@ blink_count_fig = go.FigureWidget(
         height=300
     )
 )
-
-fixation_duration_fig = go.FigureWidget(
+st.plotly_chart(blink_count_fig)
+fixation_duration_fig = go.Figure(
     data=[go.Scatter(x=[], y=[], mode='lines+markers', line=dict(color='green'), name='Fixation Duration')],
     layout=go.Layout(
         title="Fixation Duration Over Time",
@@ -322,8 +323,8 @@ fixation_duration_fig = go.FigureWidget(
         height=300
     )
 )
-
-pupil_diameter_fig = go.FigureWidget(
+st.plotly_chart(fixation_duration_fig)
+pupil_diameter_fig = go.Figure(
     data=[go.Scatter(x=[], y=[], mode='lines+markers', line=dict(color='purple'), name='Pupil Diameter')],
     layout=go.Layout(
         title="Pupil Diameter Over Time",
@@ -332,7 +333,7 @@ pupil_diameter_fig = go.FigureWidget(
         height=300
     )
 )
-
+st.plotly_chart(pupil_diameter_fig)
 # Create labels for all 13 metrics with fixed width
 speed_label = widgets.HTML(value="<b>Saccade Speed:</b> 0.00 pixels/sec (N/A)",
                            layout=widgets.Layout(width='100%', margin='5px'))
