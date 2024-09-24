@@ -17,7 +17,7 @@ import cv2
 import mediapipe as mp
 import numpy as np
 from IPython.display import display, Javascript
-from google.colab import output
+#from google.colab import output
 import base64
 from PIL import Image
 import io
