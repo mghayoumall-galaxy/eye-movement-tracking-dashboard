@@ -29,6 +29,17 @@ import pandas as pd
 from datetime import datetime
 import atexit
 import plotly.graph_objs as go
+import os
+
+# Use environment variable for PORT provided by Render
+port = int(os.environ.get("PORT", 8501))
+
+# Set server configurations in Streamlit
+import streamlit as st
+st.set_page_config(layout="wide")
+
+# Your existing Streamlit code
+
 
 # Suppress deprecated warnings from protobuf
 import warnings
