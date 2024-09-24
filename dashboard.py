@@ -10,7 +10,7 @@ Forth
 """
 
 # Install necessary libraries
-!pip install mediapipe opencv-python ipywidgets pandas scipy plotly
+#!pip install mediapipe opencv-python ipywidgets pandas scipy plotly
 
 # Import required libraries
 import cv2
