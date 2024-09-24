@@ -238,7 +238,7 @@ def receive_frame(dataURL):
         print(f"Error in receive_frame: {e}")
 
 # Register the callback
-output.register_callback('notebook.receive_frame', receive_frame)
+#output.register_callback('notebook.receive_frame', receive_frame)
 
 # JavaScript code to capture video frames and send to Python
 def capture_video():
