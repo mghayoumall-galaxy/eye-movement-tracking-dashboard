@@ -4,7 +4,30 @@ import numpy as np
 from PIL import Image
 
 # Set page layout
+import streamlit as st
+import cv2
+import numpy as np
+
+# Set the page layout as the first command
 st.set_page_config(layout="wide")
+
+# Start video capture
+st.title("Webcam Live Stream")
+run = st.checkbox('Run')
+
+FRAME_WINDOW = st.image([])  # Placeholder for frames
+
+camera = cv2.VideoCapture(0)
+
+while run:
+    _, frame = camera.read()
+    frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    FRAME_WINDOW.image(frame)
+else:
+    st.write('Stopped')
+
+camera.release()
+
 #st.set_page_config(layout="wide")
 # Display the Camera Capture UI using HTML and JavaScript
 st.components.v1.html('''
