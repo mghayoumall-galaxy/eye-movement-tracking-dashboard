@@ -5,7 +5,7 @@ from PIL import Image
 
 # Set page layout
 st.set_page_config(layout="wide")
-
+#st.set_page_config(layout="wide")
 # Display the Camera Capture UI using HTML and JavaScript
 st.components.v1.html('''
     <div>
@@ -60,7 +60,7 @@ port = int(os.environ.get("PORT", 8501))
 
 # Set server configurations in Streamlit
 import streamlit as st
-st.set_page_config(layout="wide")
+#st.set_page_config(layout="wide")
 
 # Your existing Streamlit code
 
