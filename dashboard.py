@@ -1,5 +1,3 @@
-
-"""
 import streamlit as st
 import cv2
 import numpy as np
@@ -9,7 +7,7 @@ from PIL import Image
 st.set_page_config(layout="wide")
 
 # Display the Camera Capture UI using HTML and JavaScript
-st.components.v1.html("""
+st.components.v1.html('''
     <div>
         <video id="video" width="320" height="240" autoplay></video>
         <button id="snap">Capture</button>
@@ -32,7 +30,8 @@ st.components.v1.html("""
             context.drawImage(video, 0, 0, 320, 240);
         });
     </script>
-""", height=400)
+''', height=400)
+
 # Install necessary libraries
 #!pip install mediapipe opencv-python ipywidgets pandas scipy plotly
 
